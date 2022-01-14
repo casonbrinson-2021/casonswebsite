@@ -1,6 +1,7 @@
 /*
  * Developer: Cason Brinson
  * Date Created: 12/05/2021
+ * Adding this note for github
  */
 
 /* set the scroll position to be at the top of the page */
