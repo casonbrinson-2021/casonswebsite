@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1B3B45;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Text colors and sizes */
+.normal-color {
+    color: #8A9797;
+}
+
+.bright-color {
+    color: #F2F5EA;
+}
+
+.accent-color {
+    color: #C15543;
+}
+
+span.italics {
+    font-style: italic;
+    font-size: 18px;
+    /*font-size: 2.1vw*/
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 64px;
+    /*font-size: 7.5vw;*/
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 36px;
+    /*font-size: 4.2vw*/
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 28px;
+    /*font-size: 3.2vw;*/
+    font-weight: 700;
+}
+
+p {
+    font-size: 18px;
+    /*font-size: 2.1vw;*/
+    font-weight: 300;
+}
+
+p.small-p {
+    font-size: 14px;
+    /*font-size: 1.6vw*/
+    font-weight: 300;
+    opacity: 65%;
+}
+
+.background-color {
+    color: #1B3B45;
+}
+
+
+
+
+/* Header stuff */ 
+
+
+
+
+/* Title Section */
+.section-title {
+    width: 100vw;
+    height: fit-content;
+}
+
+.container-title-all {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.container-title-header {
+}
+
+.container-title-description {
+    margin-top: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/* App Info Section */
+.section-app-info {
+    width: 100vw;
+    height: fit-content;
+}
+
+.container-app-info-all {
+}
+
+/* change thef flex direction for mobile view */
+.container-app-info {
+    display: flex;
+    height: fit-content;
+}
+
+.container-image-description {
+    width: fit-content;
+    text-align: center;
+    margin: auto;
+    max-width: 300px;
+    margin-bottom: 30px;
+    min-height: 560px;
+}
+
+.container-image-text {
+}
+
+
+.iphone-image {
+    width: 250px;
+}
+
+.container-app-info-title {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+
+
+
+/* Responsivity CSS */
+@media screen and (max-width: 800px) {
+    .container-app-info {
+        flex-direction: column;
+    }
+
+    .iphone-image {
+        width: 40vw;
+    }
+
+    .container-image-description {
+        max-width: 45vw;
+    }
+}
+
+
