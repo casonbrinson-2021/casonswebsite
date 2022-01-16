@@ -88,6 +88,7 @@ p.small-p {
 }
 
 .container-title-header {
+    text-align: center;
 }
 
 .container-title-description {
@@ -151,6 +152,7 @@ p.small-p {
 
     .container-image-description {
         max-width: 45vw;
+        min-height: 0px;
     }
 }
 
