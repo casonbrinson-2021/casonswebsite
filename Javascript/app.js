@@ -20,6 +20,8 @@ const menuButton = document.querySelector(".container-menu-icon");
 const closeButton = document.querySelector(".container-close-icon");
 const sideBar = document.querySelector(".container-mobile-side-bar");
 const menuLinks = document.querySelectorAll(".mobile-nav-link");
+const grayedOut = document.querySelector(".container-mobile-blur");
+const logo = document.querySelector(".logo");
 
 
 
@@ -32,15 +34,17 @@ let scrolledToBottom = false;                    //start off with the user not a
 
 
 /* set up the event listeners that will trigger various functions */
-//window.addEventListener("scroll", scrollFunction);                  //called whenever the user scrolls
-//navContainer.addEventListener("mouseenter", enterNavbarFunction);   //called based on mouse entering element
-//navContainer.addEventListener("mouseleave", leaveNavbarFunction);   //called based on mouse leaving element
-
 //add event listener for the mobile side bar
 menuButton.addEventListener("click", clickMenuFunction);
 closeButton.addEventListener("click", clickCloseFunction);
 menuLinks.forEach(link => {
     link.addEventListener("click", clickCloseFunction);
+});
+grayedOut.addEventListener("click", clickCloseFunction);
+logo.addEventListener("click", () => {
+    sideBar.classList.remove("show-side-bar");
+    body.classList.remove("stay");
+    blurElem.classList.remove("blur");
 });
 
 
@@ -121,13 +125,12 @@ function clickCloseFunction() {
 /* Setup the hwole page for all aniamtions (this will run as soon as the page loads */
 function setupPageForAnimations() {
 
-    
-    setupTypingAnimation();
-    hideNavBar();
-    navBar.style.transitionDuration = "0.8s";
-    setupWelcomeTextAnimation();
-    setupWelcomeSubtextAnimation();
-    setupIntroAnimations();
+    //setupTypingAnimation();
+    //hideNavBar();
+    //navBar.style.transitionDuration = "0.8s";
+    //setupWelcomeTextAnimation();
+    //setupWelcomeSubtextAnimation();
+    //setupIntroAnimations();
     
 
     //observer setups
@@ -270,10 +273,10 @@ function setupAboutObserver() {
     document.querySelector(".container-about-me-logos").classList.add("hide-text");
 }
 
-const sectionAbout = document.querySelector(".section-about-me");
+const aboutPieces = document.querySelectorAll(".about");
 const sectionAboutOptions = {
     threshold: 1,
-    rootMargin: "0px 0px -50px 0px",
+    rootMargin: "0px 0px -20px 0px",
 };
 const sectionAboutObserver = new IntersectionObserver(function (entries, sectionAboutObserver) {
     //function for the observer
@@ -283,14 +286,14 @@ const sectionAboutObserver = new IntersectionObserver(function (entries, section
         }
         else {
             //setup all the new styles now that the user sees the whole seciton and then unobserve this section so it stay
-            document.querySelector("#about-me-header-text").classList.add("reveal-text");
-            document.querySelector("#about-me-paragraph-text").classList.add("reveal-text");
-            document.querySelector(".container-about-me-logos").classList.add("reveal-text");
+            entry.target.classList.add("reveal-text");
             sectionAboutObserver.unobserve(entry.target);
         }
     });
 }, sectionAboutOptions);
-sectionAboutObserver.observe(sectionAbout);
+aboutPieces.forEach(piece => {
+    sectionAboutObserver.observe(piece);
+})
 
 //projects section observers
 const projectPieces = document.querySelectorAll(".projects");
@@ -386,9 +389,9 @@ dividers.forEach(divider => {
 
 /* Running everything you need to run on page load (animations etc.) */
 //may want to find some way to run these beter than this but this works and sems to not be against any coding practices I'm aware of yet
-/*
-setupPageForAnimations(); 
 
+setupPageForAnimations(); 
+/*
 setTimeout(typingAnimationFunction, 3000);
 setTimeout(welcomeTextAnimation, 14000);
 setTimeout(welcomeSubtextAnimation, 14200);
@@ -400,6 +403,6 @@ setTimeout(setupNavBarMouseEvents, 14800);
 */
 
 setupNavBarMouseEvents();
-setTimeout(function() {document.querySelector("body").classList.remove("stop-scroll");}, 2);
+//setTimeout(function() {document.querySelector("body").classList.remove("stop-scroll");}, 2);
 
 

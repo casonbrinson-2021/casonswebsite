@@ -182,6 +182,7 @@ nav {
     right: 0px;
     display: flex;
     justify-content: center;
+    align-items: center;
     display: none;
     transform: translateX(100%);
     z-index: 1000;
@@ -201,12 +202,11 @@ nav {
 
 .mobile-nav-links-list {
     list-style: none;
-    height: 100%;
+    height: 80%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .mobile-nav-links-list a{
@@ -571,7 +571,7 @@ nav {
 .container-mobile-project-info {
     margin-top: 30px;
     height: fit-content;
-    width: 70%;
+    width: 100%;
 
     display: flex;
     justify-content: space-between;
@@ -580,6 +580,9 @@ nav {
 .container-mobile-project-links {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+
+    width: 100px;
 }
 
 
@@ -695,7 +698,6 @@ input::-webkit-contacts-auto-fill-button {
 
 /* New and Simplified contact section */
 .section-contact {
-
     margin-top: 180px;
     display: flex;
     justify-content: center;
@@ -703,7 +705,6 @@ input::-webkit-contacts-auto-fill-button {
 }
 
 .container-contact-all {
-
     width: 70vw;
     display: flex;
     justify-content: space-between;
@@ -847,6 +848,7 @@ a {
 
 /* animations that will occur as you scroll down the screen */
 .section-about-me {
+    width: 100%;
 }
 
 .projects {
@@ -889,27 +891,27 @@ a {
 @media screen and (max-width: 800px) {
     /* font sizes and such styles */
     span.italics {
-        font-size: 2.1vw
+        font-size: 4.1vw
     }
     
     h1 {
-        font-size: 7.5vw;
+        font-size: 8.7vw;
     }
     
     h2 {
-        font-size: 4.2vw
+        font-size: 4.5vw
     }
     
     h3 {
-        font-size: 3.2vw;
+        font-size: 4.5vw;
     }
     
     p {
-        font-size: 2.1vw;
+        font-size: 3.1vw;
     }
     
     p.small-p {
-        font-size: 1.6vw
+        font-size: 2.6vw
     }
 
     /* nav styles */
@@ -929,6 +931,7 @@ a {
         justify-content: space-between;
         background-color: #8A9797;
         opacity: 100%;
+
     }
 
     .nav-item-mobile-left {
@@ -965,6 +968,17 @@ a {
     }
 
     /* Welcome section styles */
+    .container-welcome-top {
+        max-width: 100%;
+    }
+    
+    .container-welcome-middle {
+        max-width: 100%;
+    }
+    
+    .container-welcome-bottom {
+        max-width: 100%;
+    }
 
     /* intro section styles */
     #intro-image-left,
@@ -972,13 +986,42 @@ a {
         width: 52.7vw;
     } 
 
+    #intro-image-left {
+        margin-left: -150px;
+    }
+
+    #intro-image-right {
+        margin-right: -150px;
+    }
+
     .container-intro-all {
         margin-top: 20.2vw;
     }
 
     /* about me section styles */
     #logos-image {
-        width: 30vw;
+        width: 60vw;
+    }
+
+    .container-about-me-logos {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        margin-top: 30px;
+    }
+
+    .section-about-me {
+    }
+
+    .container-about-me-all {
+        flex-direction: column;
+    }
+
+    .container-about-me-text {
+        width: 100%;
+    }
+
+    .container-about-me-paragraph {
+        width: 100%;
     }
 
     /* projects section styles */
@@ -989,10 +1032,18 @@ a {
     .section-mobile-projects {
         display: flex;
     }
+
+    #second-divider {
+        margin-top: 200px;
+    }
     
     /* social section */
+    .section-contact {
+        margin-top: 290px;
+    }
+
     .social-image {
-        width: 10vw;
+        width: 15vw;
     }
 
 
