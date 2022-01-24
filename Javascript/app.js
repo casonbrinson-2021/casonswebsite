@@ -83,11 +83,14 @@ function enterNavbarFunction() {
  * gets called whenever the user was hovering over the nav bar and then moves themouse away
  */
 function leaveNavbarFunction() {
+    /*
     let curScrollPosY = window.scrollY;
 
     if(curScrollPosY >= 75) {
         navBar.classList.add("nav-hidden");
     }
+    */
+    navBar.classList.add("nav-hidden");
 }
 
 /*
@@ -125,16 +128,17 @@ function clickCloseFunction() {
 /* Setup the hwole page for all aniamtions (this will run as soon as the page loads */
 function setupPageForAnimations() {
 
-    //setupTypingAnimation();
-    //hideNavBar();
+    setupTypingAnimation();
+    hideNavBar();
     //navBar.style.transitionDuration = "0.8s";
-    //setupWelcomeTextAnimation();
-    //setupWelcomeSubtextAnimation();
-    //setupIntroAnimations();
+    setupWelcomeTextAnimation();
+    setupWelcomeSubtextAnimation();
+    setupIntroAnimations();
     
 
     //observer setups
     setupAboutObserver();
+    setupIntroObservers();
     setupProjectsObserver();
     setupContactObserver();
     setupDividersObserver();
@@ -249,7 +253,7 @@ function welcomeSubtextAnimation() {
 //takes care of everything with the intro section animations when the page loads
 function setupIntroAnimations() {
     //stop the user form being able to scroll when the webpage initiall loads********
-    document.querySelector("body").classList.add("stop-scroll");
+    //document.querySelector("body").classList.add("stop-scroll");
 
     //setup the first observer things properly
     document.querySelector("#intro-image-left").classList.add("hide-image-left");
@@ -266,6 +270,31 @@ function introAnimation() {
 
 
 /* setting up the intersection observers needed */
+//intro animation observers
+function setupIntroObservers() {
+    document.querySelector("#intro-image-left").classList.add("hide-image-left");
+    document.querySelector("#intro-image-right").classList.add("hide-image-right");
+    document.querySelector("#intro-text-all").classList.add("hide-text");
+}
+const introSection = document.querySelector(".section-intro");
+const introSectionOptions = {
+    threshold: 1,
+    rootMargin: "0px 0px -20px 0px",
+};
+const introSectionObserver = new IntersectionObserver(function(entries, introSectionObserver) {
+    //funciton for the observer
+    entries.forEach(entry => {
+        if(entry.isIntersecting === false) {
+            return;
+        }
+        else {
+            introAnimation();
+        }
+    });
+}, introSectionOptions);
+introSectionObserver.observe(introSection);
+
+
 //about me section observers
 function setupAboutObserver() {
     document.querySelector("#about-me-header-text").classList.add("hide-text");
@@ -391,18 +420,18 @@ dividers.forEach(divider => {
 //may want to find some way to run these beter than this but this works and sems to not be against any coding practices I'm aware of yet
 
 setupPageForAnimations(); 
-/*
+setupNavBarMouseEvents();
+
 setTimeout(typingAnimationFunction, 3000);
 setTimeout(welcomeTextAnimation, 14000);
 setTimeout(welcomeSubtextAnimation, 14200);
-setTimeout(showNavBar, 14600);
+setTimeout(showNavBar, 14500);
+/*
 setTimeout(resetNavBarAnimation, 14200);
 setTimeout(introAnimation, 14200);
 setTimeout(function() {document.querySelector("body").classList.remove("stop-scroll");}, 14800);
 setTimeout(setupNavBarMouseEvents, 14800);
 */
-
-setupNavBarMouseEvents();
 //setTimeout(function() {document.querySelector("body").classList.remove("stop-scroll");}, 2);
 
 

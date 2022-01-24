@@ -268,10 +268,10 @@ nav {
 } 
 
 #intro-image-left {
-    margin-left: -100px;
+    margin-left: -150px;
 }
 #intro-image-right {
-    margin-right: -100px;
+    margin-right: -150px;
 }
 
 .container-intro-text {
@@ -279,7 +279,6 @@ nav {
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 455px;
 }
 
 
@@ -811,6 +810,7 @@ a {
     /* use this to change stuff about the whole seciton bitch */
     max-width: 100vw;
     overflow: hidden;
+
 }
 
 /*-------*/
@@ -903,7 +903,7 @@ a {
     }
     
     h3 {
-        font-size: 4.5vw;
+        font-size: 4.2vw;
     }
     
     p {
@@ -969,15 +969,15 @@ a {
 
     /* Welcome section styles */
     .container-welcome-top {
-        max-width: 100%;
+        max-width: 95%;
     }
     
     .container-welcome-middle {
-        max-width: 100%;
+        max-width: 95%;
     }
     
     .container-welcome-bottom {
-        max-width: 100%;
+        max-width: 95%;
     }
 
     /* intro section styles */
