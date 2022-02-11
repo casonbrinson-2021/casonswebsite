@@ -334,7 +334,7 @@ function setupProjectsObserver() {
 }
 const projectPiecesOptions = {
     threshold: 1,
-    rootMargin: "0px 0px -50px 0px",
+    rootMargin: "0px 0px 0px 0px",
 };
 const projectPiecesObserver = new IntersectionObserver(function(entries, projectPiecesObserver) {
     //function for the observer

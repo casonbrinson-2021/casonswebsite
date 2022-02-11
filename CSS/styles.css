@@ -384,6 +384,12 @@ nav {
     margin-top: 77px;
 }
 
+.container-featured-project-four  {
+    width: 100%;
+    height: fit-content;
+    margin-top: 77px;
+}
+
 .project-title {
     /*margin-left: -61px;*/
     margin-bottom: 20px;
@@ -392,7 +398,20 @@ nav {
 .container-featured-project-one-text,
 .container-featured-project-two-text,
 .container-featured-project-three-text {
-    background-color: #477F92;
+    background-color: #477F92; 
+    width: 38vw;
+    max-height: 1=230px;
+    min-width: 360px;
+    border-radius: 20px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+    padding: 15px;
+    position: absolute;
+    z-index: 9;
+}
+
+.container-featured-project-four-text  {
+    background-color: #477F92; 
     width: 38vw;
     max-height: 1=230px;
     min-width: 360px;
@@ -415,6 +434,16 @@ nav {
     background-color: #C15543;
 }
 
+.container-featured-project-four-visual {
+    width: 45vw;
+    height: 27vw;
+    float: right;
+    position: relative;
+    border-radius: 20px;
+    background-color: #C15543;
+
+}
+
 .project-image {
     height: 100%;
     width: 100%;
@@ -428,6 +457,7 @@ nav {
     opacity: 100%;
     box-shadow: 0px 0px 18px 8px #C15543;
 }
+
 
 .container-extra-proejct-text {
     width: 300px;
@@ -522,7 +552,7 @@ nav {
 .container-mobile-project {
     width: 100%;
     height: fit-content;
-    margin-top: 150px;
+    margin-top: 140px;
 }
 
 .mobile-project-one {
